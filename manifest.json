@@ -1,0 +1,25 @@
+{
+  "name": "Shortcut",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": "images/logo.png"
+  },
+  "icons": {
+    "16": "images/logo.png",
+    "48": "images/logo.png",
+    "128": "images/logo.png"
+  },
+  "permissions": ["tabs", "activeTab"],
+  "background": {
+    "scripts": ["lib/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "run_at": "document_start",
+      "js": ["lib/content.js"]
+    }
+  ],
+  "minimum_chrome_version": "80",
+  "manifest_version": 2
+}
